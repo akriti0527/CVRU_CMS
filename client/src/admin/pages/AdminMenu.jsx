@@ -20,7 +20,7 @@ function AdminMenu() {
   /* ---------------- FETCH ALL FOODS ---------------- */
   const fetchFoods = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/v1/foods/");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/foods/`);
       if (res.data?.success) {
         setFoods(res.data.foods);
       }
@@ -40,7 +40,7 @@ const toggleAvailability =
       const response =
         await axios.put(
 
-          `http://localhost:5000/api/v1/foods/toggle-availability/${foodId}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/foods/toggle-availability/${foodId}`,
 
           {},
 
@@ -136,7 +136,7 @@ const deleteFood = async (
 
     await axios.delete(
 
-      `http://localhost:5000/api/v1/foods/${foodId}`,
+      `${import.meta.env.VITE_API_URL}/api/v1/foods/${foodId}`,
 
       {
         withCredentials: true
@@ -284,7 +284,7 @@ const deleteFood = async (
       <div className="admin-food-grid">
         {filteredFoods.map((item) => (
           <div className="admin-food-card" key={item._id}>
-            <img src={`http://localhost:5000/${item.image}`} alt={item.name} />
+            <img src={`${import.meta.env.VITE_API_URL}/${item.image}`} alt={item.name} />
             <div className="food-content">
               <h2>{item.name}</h2>
               <h3>₹ {item.price}</h3>

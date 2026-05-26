@@ -138,7 +138,7 @@ function FoodCard({
 
                     food.image
 
-                      ? `http://localhost:5000/${food.image}`
+                      ? `${import.meta.env.VITE_API_URL}/${food.image}`
 
                       : "https://via.placeholder.com/300"
                   }

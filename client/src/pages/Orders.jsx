@@ -30,7 +30,7 @@ import "../css/Orders.css";
 // =========================================
 
 // const socket =
-// io("http://localhost:5000");
+// io(`${import.meta.env.VITE_API_URL}`);
 
 
 
@@ -80,7 +80,7 @@ function Orders() {
       const response =
         await axios.get(
 
-          "http://localhost:5000/api/v1/orders/my-orders",
+          `${import.meta.env.VITE_API_URL}/api/v1/orders/my-orders`,
 
           {
             withCredentials: true

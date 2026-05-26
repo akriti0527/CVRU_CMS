@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 1. Create an isolated axios instance
 const apiClient = axios.create({
-  baseURL: "http://localhost:5000/api/v1",
+  baseURL: `${import.meta.env.VITE_API_URL}/api/v1`,
   headers: {
     "Content-Type": "application/json",
   },
@@ -75,7 +75,7 @@ apiClient.interceptors.response.use(
 
         // Request a brand new access token from the backend
         // Note: If using httpOnly cookies, pass { withCredentials: true } instead of a body payload
-        const response = await axios.post("http://localhost:5000/api/v1/users/refresh-token", {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/users/refresh-token`, {
           refreshToken: localRefreshToken,
         });
 
