@@ -1,0 +1,8 @@
+ REGISTER the User   
+     http://localhost:5000/api/v1/users/register
+
+LOGIN the User
+     http://localhost:5000/api/v1/users/login
+
+
+     
