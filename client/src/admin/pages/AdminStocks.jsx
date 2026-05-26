@@ -64,7 +64,7 @@ function AdminStocks() {
         const response =
           await axios.get(
 
-            "http://localhost:5000/api/v1/foods/"
+            `${import.meta.env.VITE_API_URL}/api/v1/foods/`
           );
 
 
@@ -135,7 +135,7 @@ function AdminStocks() {
 
         await axios.put(
 
-          `http://localhost:5000/api/v1/foods/update-stock/${foodId}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/foods/update-stock/${foodId}`,
 
           {
 
@@ -211,7 +211,7 @@ function AdminStocks() {
 
         await axios.put(
 
-          `http://localhost:5000/api/v1/foods/toggle-availability/${foodId}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/foods/toggle-availability/${foodId}`,
 
           {
 
@@ -538,7 +538,7 @@ function AdminStocks() {
 
                     food.image
 
-                      ? `http://localhost:5000/${food.image}`
+                      ? `${import.meta.env.VITE_API_URL}/${food.image}`
 
                       : "https://via.placeholder.com/300"
                   }
