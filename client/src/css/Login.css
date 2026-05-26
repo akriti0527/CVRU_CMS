@@ -1,0 +1,174 @@
+.login-page{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  overflow: hidden;
+}
+
+
+
+/* LEFT */
+.login-left{
+  flex: 1;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+
+
+.login-overlay{
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.55);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 80px;
+}
+
+
+
+.login-overlay h1{
+  color: #ffd000;
+
+  font-size: 82px;
+  font-weight: 800;
+
+  margin-bottom: 20px;
+}
+
+
+
+.login-overlay p{
+  color: white;
+
+  font-size: 24px;
+}
+
+
+
+/* RIGHT */
+.login-right{
+  width: 42%;
+
+  background: #000f4d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.login-box{
+  width: 470px;
+}
+
+
+
+.login-box h2{
+  color: #ffd000;
+
+  font-size: 56px;
+  font-weight: 800;
+
+  margin-bottom: 16px;
+}
+
+
+
+.login-subtitle{
+  color: #b5bdd6;
+
+  font-size: 21px;
+
+  margin-bottom: 50px;
+}
+
+
+
+/* INPUT */
+.login-box input{
+  width: 100%;
+
+  height: 68px;
+
+  border: none;
+
+  outline: none;
+
+  background: #1a2542;
+
+  border-radius: 14px;
+
+  padding: 0 24px;
+
+  margin-bottom: 24px;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+
+
+.login-box input::placeholder{
+  color: #9ca3af;
+}
+
+
+
+/* BUTTON */
+.login-box button{
+  width: 100%;
+
+  height: 68px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #ffd000;
+
+  color: black;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+}
+
+
+
+/* SIGNUP */
+.signup-text{
+  color: #cbd5e1;
+
+  text-align: center;
+
+  margin-top: 28px;
+
+  font-size: 17px;
+}
+
+
+
+.signup-text a{
+  color: #ffd000;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  margin-left: 8px;
+}

@@ -1,0 +1,462 @@
+/* ================= MAIN BACKGROUND ================= */
+
+.admin-menu-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 30px;
+  position: relative;
+}
+
+/* LIGHT OVERLAY */
+.admin-menu-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 60, 0.6);
+  z-index: 0;
+}
+
+/* CONTENT ABOVE */
+.admin-menu-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= TOP ================= */
+
+.admin-menu-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.admin-menu-heading {
+  color: #ffd000;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.admin-menu-top input {
+  justify-self: center;
+  width: 450px;
+  height: 60px;
+
+  background: #0f1b3d;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+
+  padding: 0 25px;
+  color: white;
+  font-size: 16px;
+
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.admin-menu-top button {
+  justify-self: end;
+
+  width: 170px;
+  height: 60px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: #ffd000;
+  color: black;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-menu-top button:hover {
+  transform: scale(1.05);
+}
+
+/* ================= TIMELINE ================= */
+
+.admin-timeline-section {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 35px;
+}
+
+.timeline-box {
+  flex: 1;
+  background: #1c2a4a;
+  border-radius: 22px;
+  padding: 28px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.active-timeline {
+  border: 2px solid #ffd000;
+}
+
+.timeline-box h2 {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.timeline-box p {
+  color: #aab3cf;
+  font-size: 16px;
+}
+
+.timeline-box:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= CATEGORY ================= */
+
+.admin-category-section {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.admin-category-section button {
+  width: 140px;
+  height: 52px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #1a2542;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.active-category {
+  background: #ffd000 !important;
+  color: black !important;
+}
+
+/* ================= GRID ================= */
+
+.admin-food-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+
+.admin-food-card {
+  background: #1a2542;
+  border-radius: 20px;
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-food-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #ffd000;
+  box-shadow: 0 0 18px rgba(255,208,0,0.18);
+}
+
+/* IMAGE */
+.admin-food-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 25px;
+}
+
+/* CONTENT */
+.food-content {
+  padding: 18px;
+  text-align: center;
+}
+
+.food-content h2 {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.food-content h3 {
+  color: #ffd000;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* STATUS */
+.available-status {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.not-status {
+  color: #f97316;
+}
+
+.out-status {
+  color: #ef4444;
+}
+
+/* SELECT */
+.food-content select {
+  width: 100%;
+  height: 46px;
+
+  margin-top: 12px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: #101935;
+  color: white;
+
+  padding: 0 10px;
+}
+
+/* ================= LUNCH TABLE ================= */
+
+/* ================= LUNCH FULL SECTION ================= */
+
+.lunch-table-section {
+  width: 100%;
+  min-height: 70vh;
+
+  margin-top: 30px;
+  padding: 40px;
+
+  background: rgba(28, 42, 74, 0.9);
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* TITLE */
+.table-title {
+  text-align: center;
+  color: #ffd000;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+/* TABLE */
+.menu-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px; /* 🔥 spacing between rows */
+}
+
+/* HEADER */
+.menu-table th {
+  background: #ffd000;
+  color: black;
+  padding: 16px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* ROW */
+.menu-table tr {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+}
+
+/* CELLS */
+.menu-table td {
+  padding: 18px;
+  text-align: center;
+  color: white;
+  font-size: 17px;
+}
+
+/* HOVER EFFECT */
+.menu-table tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+.availability-box {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 15px;
+}
+
+
+
+.available-btn {
+
+  background: #16a34a;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+
+
+.unavailable-btn {
+
+  background: crimson;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+/* =========================================
+FOOD ACTIONS
+========================================= */
+
+.food-actions {
+
+  margin-top: 15px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+
+/* =========================================
+AVAILABILITY
+========================================= */
+
+.availability-box {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+
+.available-text {
+
+  color: #22c55e;
+
+  font-weight: 700;
+}
+
+
+
+.unavailable-text {
+
+  color: #ef4444;
+
+  font-weight: 700;
+}
+
+
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.disable-btn {
+
+  background: #ef4444;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+
+.enable-btn {
+
+  background: #22c55e;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+
+.delete-food-btn {
+
+  width: 100%;
+
+  background: #dc2626;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+
+
+.delete-food-btn:hover {
+
+  background: #b91c1c;
+}

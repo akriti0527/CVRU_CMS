@@ -1,0 +1,253 @@
+/* FULL SCREEN BACKGROUND */
+.auth-container {
+  height: 100vh;
+  width: 100%;
+
+  background: url("../assets/chillilogo-bg.png") no-repeat center center/cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLASS CARD */
+.auth-box {
+  width: 360px;
+  padding: 35px;
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  color: white;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
+}
+
+.auth-box:hover {
+  transform: translateY(-5px);
+}
+
+/* HEADING */
+.auth-box h2 {
+  color: #ffd000;
+  font-weight: 800;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 5px;
+
+  text-shadow: 0 2px 10px rgba(255, 208, 0, 0.4);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* ROLE SWITCH */
+.role-switch {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.role-switch button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: #333;
+  color: white;
+  transition: 0.3s;
+}
+
+.role-switch .active {
+  background: #ffd000;
+  color: black;
+  font-weight: bold;
+}
+
+/* INPUTS */
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  background: black;
+}
+
+/* SIGNUP / SIGNIN BUTTON */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+
+  background: #ffd000;
+  border: none;
+
+  font-weight: bold;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #ffbf00;
+}
+input {
+
+  color: white !important;
+
+  -webkit-text-fill-color: white;
+}
+
+
+
+input::placeholder {
+
+  color: #cbd5e1;
+}
+/* DIVIDER */
+.divider {
+  text-align: center;
+  margin: 12px 0;
+  font-size: 14px;
+  color: #aaa;
+  position: relative;
+}
+/* =========================================
+INPUT FIELD FIX
+========================================= */
+
+.auth-input {
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(255,255,255,0.08);
+
+  color: #ffffff !important;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s ease;
+
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+
+/* PLACEHOLDER */
+
+.auth-input::placeholder {
+
+  color: #cbd5e1;
+}
+
+
+
+/* ON FOCUS */
+
+.auth-input:focus {
+
+  border: 1px solid #ffcc00;
+
+  box-shadow:
+    0 0 12px rgba(255,204,0,0.3);
+
+  background: rgba(255,255,255,0.12);
+}
+
+
+
+/* AUTOFILL FIX */
+
+input:-webkit-autofill,
+
+input:-webkit-autofill:hover,
+
+input:-webkit-autofill:focus,
+
+textarea:-webkit-autofill,
+
+select:-webkit-autofill {
+
+  -webkit-text-fill-color: #ffffff !important;
+
+  transition:
+    background-color 5000s ease-in-out 0s;
+
+  box-shadow:
+    0 0 0px 1000px rgba(255,255,255,0.08) inset !important;
+}
+/* GOOGLE BUTTON */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+
+  background: white;
+  color: black;
+
+  border-radius: 8px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.google-btn:hover {
+  background: #f1f1f1;
+}
+
+/* LOGIN / SWITCH TEXT */
+.login-text {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+  color: #ccc;
+}
+
+.login-text span {
+  color: #ffd000;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/*  EXTRA FOR LOGIN MODE */
+.auth-box.login-mode input {
+  margin: 8px 0;
+}
+
+/* OPTIONAL SMOOTH TRANSITION */
+.auth-box {
+  transition: all 0.3s ease;
+}
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}

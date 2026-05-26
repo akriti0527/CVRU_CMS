@@ -1,0 +1,238 @@
+.payment-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../assets/chillilogo-bg.png") no-repeat center;
+  background-size: cover;
+
+  position: relative;
+}
+
+/*  OVERLAY (LIGHT FIXED) */
+.payment-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/*  CARD */
+.payment-card {
+  width: 360px;
+  background: rgba(20, 30, 60, 0.85);
+  border-radius: 25px;
+  padding: 25px;
+  color: white;
+
+  position: relative;
+  z-index: 1;
+
+  backdrop-filter: blur(10px);
+}
+.payment-page {
+  position: relative; /* IMPORTANT */
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: none;
+
+  background: #ffd000;
+  color: black;
+
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background: #ffbf00;
+}
+/*  HEADING */
+.payment-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffd000;
+  font-weight: 800;
+  font-size: 32px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: antiquewhite;
+}
+
+/* OPTIONS */
+.option-box {
+  background: #101935;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ACTIVE */
+.option-box.active {
+  border: 2px solid #ffd000;
+  color: #ffd000;
+}
+
+/* TOTAL */
+.total-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.total-section p {
+  color: #ccc;
+}
+
+.total-section h2 {
+  color: #ffd000;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* BUTTON */
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ffd000;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.orders-table th,
+.orders-table td {
+  padding: 12px;
+  text-align: center; /*  centers everything */
+}
+
+/* OPTIONAL: better spacing */
+.orders-table td {
+  font-size: 15px;
+}
+.orders-table th:nth-child(1),
+.orders-table td:nth-child(1) {
+  width: 10%;
+}
+
+.orders-table th:nth-child(2),
+.orders-table td:nth-child(2) {
+  width: 20%;
+}
+
+.orders-table th:nth-child(3),
+.orders-table td:nth-child(3) {
+  width: 40%;
+}
+
+.orders-table th:nth-child(4),
+.orders-table td:nth-child(4) {
+  width: 15%;
+}
+.qr-container {
+
+  margin-top: 25px;
+
+  background: #1e293b;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  animation: fadeIn 0.3s ease;
+}
+
+
+
+.qr-container h3 {
+
+  color: #ffd000;
+
+  margin-bottom: 20px;
+}
+
+
+
+.qr-box {
+
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 20px;
+
+  width: fit-content;
+
+  margin: auto;
+}
+
+
+
+.upi-text {
+
+  color: white;
+
+  margin-top: 18px;
+
+  font-size: 16px;
+}
+
+
+
+.amount-text {
+
+  color: #22c55e;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  margin-top: 10px;
+}
+
+
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(10px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}

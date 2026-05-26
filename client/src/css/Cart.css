@@ -1,0 +1,152 @@
+/* 🔥 MAIN WRAPPER */
+.cart-wrapper {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* 🔥 BOTH BOXES */
+.cart-section,
+.summary-section {
+  width: 100%;
+  background: #1f2a44;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+/* 🔥 HEADINGS */
+.cart-section h2,
+.summary-section h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 🔥 EMPTY TEXT */
+.empty-cart {
+  color: #9ea6c3;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* 🔥 CART ITEM */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  background: #101935;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+/* ITEM TEXT */
+.cart-item h4 {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.cart-item p {
+  color: #ffd000;
+  font-size: 13px;
+}
+
+/* 🔥 QUANTITY CONTROLS */
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-box button {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 6px;
+  background: #ffd000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quantity-box span {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 🔥 SUMMARY SECTION */
+.summary-row,
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+/* SUBTOTAL + TAX */
+.summary-row p {
+  color: #cfd6ff;
+  font-size: 15px;
+}
+
+/* 🔥 DIVIDER ABOVE TOTAL */
+.total-row {
+  border-top: 1px solid #2f3e6a;
+  padding-top: 14px;
+  margin-top: 10px;
+}
+
+/* 🔥 GRAND TOTAL */
+.total-row h3 {
+  color: #ffd000;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 🔥 CHECKOUT BUTTON */
+.checkout-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #ffd000;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #ffbf00;
+}
+
+/* 🔥 LIGHT THEME SUPPORT (OPTIONAL) */
+body.light-theme .cart-section,
+body.light-theme .summary-section {
+  background: #ffffff;
+}
+
+body.light-theme .cart-section h2,
+body.light-theme .summary-section h2 {
+  color: black;
+}
+
+body.light-theme .cart-item {
+  background: #f2f2f2;
+}
+
+body.light-theme .cart-item h4 {
+  color: black;
+}
+
+body.light-theme .summary-row p {
+  color: black;
+}
+
+body.light-theme .total-row h3 {
+  color: black;
+}
