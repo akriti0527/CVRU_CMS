@@ -1,0 +1,277 @@
+.admin-settings-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+/*  BIG CARD */
+.settings-card {
+  background: rgba(0, 0, 50, 0.85);
+
+  width: 600px;             
+  padding: 45px 40px;    
+
+  border-radius: 22px;
+
+  backdrop-filter: blur(12px);
+  color: white;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* TITLE */
+.settings-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+
+  color: #ffd000;
+  font-size: 28px;
+}
+
+/*  EACH ROW */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 22px;
+  padding: 18px 22px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.setting-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* TEXT */
+.setting-item span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*  BUTTON */
+.setting-item button {
+  padding: 8px 20px;
+  font-size: 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #ffd000;
+  color: black;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.setting-item button:hover {
+  transform: scale(1.05);
+}
+
+/*  DANGER BUTTON */
+.setting-item.danger button {
+  background: #ff3b3b;
+  color: white;
+}
+.admin-settings-page {
+
+  padding: 30px;
+
+  min-height: 100vh;
+
+  background: #0f172a;
+
+  color: white;
+}
+
+
+
+.settings-container {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(350px, 1fr));
+
+  gap: 25px;
+}
+
+
+
+.settings-card {
+
+  background: #1e293b;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+
+.settings-card h2 {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  color: #ffd000;
+}
+
+
+
+.profile-image-box {
+
+  position: relative;
+
+  width: 130px;
+
+  height: 130px;
+
+  margin: auto;
+
+  margin-bottom: 25px;
+}
+
+
+
+.profile-image-box img {
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #ffd000;
+}
+
+
+
+.upload-btn {
+
+  position: absolute;
+
+  bottom: 0;
+
+  right: 0;
+
+  width: 40px;
+
+  height: 40px;
+
+  background: #ffd000;
+
+  color: black;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+
+.input-box {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: #334155;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  margin-bottom: 18px;
+}
+
+
+
+.input-box input {
+
+  flex: 1;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  background: black;
+}
+
+
+
+.save-btn {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #ffd000;
+
+  color: black;
+
+  font-weight: 700;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: 0.3s ease;
+}
+
+
+
+.save-btn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(255,208,0,0.4);
+}

@@ -1,0 +1,74 @@
+.admin-sidebar {
+  width: 280px;              /* 🔥 bigger sidebar */
+  min-height: 100vh;
+  background: #020a3a;
+
+  padding: 40px 25px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* LOGO */
+.admin-logo {
+  color: #ffd000;
+  font-size: 36px;           /* 🔥 bigger */
+  font-weight: 800;
+  
+
+  margin-bottom: 60px;
+}
+
+/* MENU */
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;                 /* 🔥 more spacing */
+}
+
+/* NORMAL ITEM */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 16px 20px;        /* 🔥 bigger box */
+
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: #cbd5e1;
+
+  font-size: 20px;           /* 🔥 bigger text */
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+/* ICON SIZE */
+.sidebar-item svg {
+  font-size: 22px;           /* 🔥 bigger icons */
+}
+
+/* HOVER */
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+.sidebar-item:hover {
+  transform: translateX(5px);
+}
+/* ACTIVE */
+.sidebar-item.active {
+  background: #ffd000;
+  color: black;
+
+  font-weight: 700;
+
+  box-shadow: 0 6px 18px rgba(255, 208, 0, 0.3);
+}
+
+/* ACTIVE ICON */
+.sidebar-item.active svg {
+  color: black;
+}

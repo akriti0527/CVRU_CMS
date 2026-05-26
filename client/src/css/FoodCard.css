@@ -1,0 +1,548 @@
+.food-section{
+  margin-top: 16px;
+}
+
+
+
+.food-grid{
+  display: grid;
+
+  grid-template-columns: repeat(4, 135px);
+
+  gap: 18px;
+}
+
+
+
+/* CARD */
+.food-card{
+  width: 135px;
+
+  background: #1a2542;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+}
+
+
+
+.food-card:hover{
+  transform: translateY(-2px);
+}
+
+
+
+/* IMAGE */
+.food-image{
+  width: 100%;
+  height: 85px;
+
+  object-fit: cover;
+}
+
+
+
+/* CONTENT */
+.food-content{
+  padding: 8px;
+}
+
+
+
+.food-content h3{
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  margin-bottom: 4px;
+
+  min-height: 24px;
+}
+
+
+
+.food-content p{
+  color: #ffd000;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+
+
+/* BUTTON */
+.food-content button{
+  width: 100%;
+
+  height: 26px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #ffd000;
+
+  color: black;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* UNAVAILABLE OVERLAY */
+
+.unavailable-overlay {
+
+  position: absolute;
+
+  top: 12px;
+
+  right: 12px;
+
+  background: crimson;
+
+  color: white;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  z-index: 10;
+}
+
+
+
+/* DISABLED BUTTON */
+
+.disabled-cart-btn {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #64748b;
+
+  color: white;
+
+  cursor: not-allowed;
+
+  font-weight: 700;
+}
+/* =========================================
+UNAVAILABLE FOOD
+========================================= */
+
+.unavailable-overlay {
+
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  background: #ef4444;
+
+  color: white;
+
+  padding: 6px 12px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  z-index: 5;
+}
+
+
+
+/* =========================================
+DISABLED BUTTON
+========================================= */
+
+.disabled-cart-btn {
+
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  background: gray !important;
+}
+.disabled-btn {
+
+  background: #808080 !important;
+
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+/* =========================================
+MODERN ADD TO CART BUTTON
+========================================= */
+
+.modern-cart-btn {
+
+  width: 100%;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #ffcc00,
+    #ff9900
+  );
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 6px 18px rgba(255, 193, 7, 0.35);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+
+
+/* HOVER EFFECT */
+
+.modern-cart-btn:hover {
+
+  transform: translateY(-2px) scale(1.02);
+
+  box-shadow:
+    0 10px 24px rgba(255, 193, 7, 0.45);
+
+  background: linear-gradient(
+    135deg,
+    #ffd633,
+    #ffb300
+  );
+}
+
+
+
+/* CLICK EFFECT */
+
+.modern-cart-btn:active {
+
+  transform: scale(0.97);
+}
+
+
+
+/* DISABLED BUTTON */
+
+.disabled-btn {
+
+  background: #6b7280 !important;
+
+  color: #e5e7eb !important;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  opacity: 0.8;
+}
+
+
+
+/* DISABLED HOVER REMOVE */
+
+.disabled-btn:hover {
+
+  transform: none;
+
+  box-shadow: none;
+}
+/* =========================================
+FOOD CONTAINER
+========================================= */
+
+.food-container {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 24px;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  padding: 10px 0;
+}
+
+
+
+/* =========================================
+FOOD CARD
+========================================= */
+
+.food-card {
+
+  width: 220px;
+
+  background: #14213d;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.25);
+
+  position: relative;
+}
+
+
+
+/* HOVER */
+
+.food-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,0.35);
+}
+
+
+
+/* =========================================
+IMAGE
+========================================= */
+
+.food-image {
+
+  width: 100%;
+
+  height: 160px;
+
+  object-fit: cover;
+}
+
+
+
+/* =========================================
+CONTENT
+========================================= */
+
+.food-content {
+
+  padding: 16px;
+
+  text-align: center;
+}
+
+
+
+/* FOOD NAME */
+
+.food-name {
+
+  color: #ffffff;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+
+
+/* PRICE */
+
+.food-price {
+
+  color: #d1d5db;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  margin-bottom: 16px;
+}
+
+
+
+/* =========================================
+BUTTON
+========================================= */
+
+.add-btn {
+
+  width: 100%;
+
+  padding: 16px 0;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #ffcc00,
+    #ff9900
+  );
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 6px 18px rgba(255, 193, 7, 0.35);
+}
+
+
+
+/* HOVER */
+
+.add-btn:hover {
+
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    135deg,
+    #ffd633,
+    #ffb300
+  );
+
+  box-shadow:
+    0 10px 24px rgba(255, 193, 7, 0.5);
+}
+
+
+
+/* DISABLED */
+
+.disabled-btn {
+
+  background: #6b7280 !important;
+
+  cursor: not-allowed;
+
+  opacity: 0.8;
+
+  box-shadow: none;
+}
+
+
+
+/* =========================================
+UNAVAILABLE OVERLAY
+========================================= */
+
+.unavailable-overlay {
+
+  position: absolute;
+
+  top: 12px;
+
+  right: 12px;
+
+  background: red;
+
+  color: white;
+
+  padding: 6px 12px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  z-index: 2;
+}
+
+
+
+/* =========================================
+NO FOOD
+========================================= */
+
+.no-food {
+
+  color: white;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .food-container {
+
+    justify-content: center;
+  }
+
+  .food-card {
+
+    width: 180px;
+  }
+
+  .food-name {
+
+    font-size: 24px;
+  }
+
+  .food-price {
+
+    font-size: 18px;
+  }
+}

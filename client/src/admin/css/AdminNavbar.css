@@ -1,0 +1,191 @@
+.admin-navbar{
+  width: 100%;
+
+  min-height: 110px;
+
+  background: #1a2542;
+
+  border-radius: 20px;
+
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+/* LEFT */
+.admin-navbar-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+
+
+.admin-navbar-left h1{
+  color: #ffd000;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1;
+  margin: 0;
+}
+
+
+
+.admin-navbar-left p{
+  color: #b5bdd6;
+
+  font-size: 17px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+
+
+
+
+/* RIGHT */
+.admin-navbar-right{
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+
+
+
+/* SEARCH */
+.admin-search-box{
+  width: 320px;
+
+  height: 55px;
+
+  background: #101935;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 18px;
+}
+
+
+
+.admin-search-icon{
+  color: #9ca3af;
+
+  font-size: 18px;
+
+  margin-right: 12px;
+}
+
+
+
+.admin-search-box input{
+  width: 100%;
+
+  background: transparent;
+
+  border: none;
+
+  outline: none;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+
+
+.admin-search-box input::placeholder{
+  color: #9ca3af;
+}
+
+
+
+
+
+/* NOTIFICATION */
+.admin-notification{
+  width: 55px;
+  height: 55px;
+
+  background: #101935;
+
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+
+.admin-notification:hover{
+  background: #ffd000;
+
+  color: black;
+}
+
+
+
+
+
+/* PROFILE */
+.admin-profile{
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+
+.admin-profile img{
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 3px solid #ffd000;
+}
+
+
+
+.admin-profile h3{
+  color: white;
+
+  font-size: 18px;
+}
+
+
+
+.admin-profile p{
+  color: #9ca3af;
+
+  font-size: 14px;
+
+  margin-top: 2px;
+}

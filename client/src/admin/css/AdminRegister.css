@@ -1,0 +1,155 @@
+.register-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* LEFT SIDE */
+.register-left {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+/* RIGHT SIDE */
+.register-right {
+  flex: 1;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 BLUE OVERLAY ONLY ON RIGHT */
+.register-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 60, 0.85);
+}
+
+/* CARD */
+.register-box {
+  position: relative;
+  z-index: 1;
+
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(20, 35, 90, 0.95);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* TEXT */
+.register-box h2 {
+  color: #facc15;
+  text-align: center;
+}
+
+.register-box p {
+  text-align: center;
+  color: #cbd5f5;
+  margin-bottom: 20px;
+}
+
+/* ROLE */
+.role-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.role-section button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.active-role {
+  background: #facc15 !important;
+  color: black;
+}
+
+/* INPUT */
+.register-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* PHONE */
+.phone-container {
+  display: flex;
+}
+
+.phone-container span {
+  background: rgba(255,255,255,0.2);
+  padding: 12px;
+  border-radius: 10px 0 0 10px;
+}
+
+.phone-container input {
+  border-radius: 0 10px 10px 0;
+}
+
+/* BUTTON */
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #facc15;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+/* GOOGLE */
+.google-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: white;
+  border-radius: 10px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-btn img {
+  width: 20px;
+}
+
+/* TEXT */
+.or-text {
+  text-align: center;
+  color: white;
+  margin: 15px 0;
+}
+
+.login-link {
+  text-align: center;
+  color: white;
+}
+
+.login-link span {
+  color: #facc15;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
