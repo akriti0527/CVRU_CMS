@@ -24,7 +24,7 @@ export const io =
     cors: {
 
       origin:
-        "http://localhost:5173",
+        "https://cvru-cms-uhrx.vercel.app/",
 
       methods:
         ["GET", "POST"],
