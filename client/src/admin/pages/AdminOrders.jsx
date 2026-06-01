@@ -38,7 +38,7 @@ function AdminOrders() {
       const response =
         await axios.get(
 
-          "http://localhost:5000/api/v1/orders/admin/active-orders",
+          "${import.meta.env.VITE_API_URL}/api/v1/orders/admin/active-orders",
 
           {
             withCredentials: true
@@ -148,7 +148,7 @@ function AdminOrders() {
     const response =
       await axios.put(
 
-        `http://localhost:5000/api/v1/orders/admin/update-status/${orderId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/orders/admin/update-status/${orderId}`,
 
         {
 
@@ -264,7 +264,7 @@ const deleteOrder = async (
     // DELETE API
     await axios.delete(
 
-      `http://localhost:5000/api/v1/orders/admin/delete-order/${orderId}`,
+      `${import.meta.env.VITE_API_URL}/api/v1/orders/admin/delete-order/${orderId}`,
 
       {
         withCredentials: true

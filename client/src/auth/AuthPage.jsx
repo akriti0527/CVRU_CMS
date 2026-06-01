@@ -86,7 +86,7 @@ function AuthPage() {
       const response =
       await axios.post(
 
-        "http://localhost:5000/api/v1/users/register",
+        "${import.meta.env.VITE_API_URL}/api/v1/users/register",
 
         {
 
@@ -192,7 +192,7 @@ function AuthPage() {
       const response =
       await axios.post(
 
-        "http://localhost:5000/api/v1/users/login",
+        "${import.meta.env.VITE_API_URL}/api/v1/users/login",
 
         {
 
@@ -284,7 +284,7 @@ async (credentialResponse) => {
     const response =
       await axios.post(
 
-        "http://localhost:5000/api/v1/users/google-login",
+        "${import.meta.env.VITE_API_URL}/api/v1/users/google-login",
 
         {
           credential:

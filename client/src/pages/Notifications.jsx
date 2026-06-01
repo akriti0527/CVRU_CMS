@@ -38,7 +38,7 @@ function Notifications() {
   useEffect(() => {
 
     const socket =
-      io("http://localhost:5000", {
+      io("${import.meta.env.VITE_API_URL}", {
 
         withCredentials: true,
       });
@@ -93,7 +93,7 @@ function Notifications() {
       const response =
         await axios.get(
 
-          "http://localhost:5000/api/v1/notifications/my-notifications",
+          "${import.meta.env.VITE_API_URL}/api/v1/notifications/my-notifications",
 
           {
             withCredentials: true,
@@ -130,7 +130,7 @@ function Notifications() {
 
       await axios.put(
 
-        `http://localhost:5000/api/v1/notifications/read/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/notifications/read/${id}`,
 
         {},
 
@@ -176,7 +176,7 @@ function Notifications() {
 
       await axios.delete(
 
-        `http://localhost:5000/api/v1/notifications/delete/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/notifications/delete/${id}`,
 
         {
           withCredentials: true,
@@ -213,7 +213,7 @@ function Notifications() {
 
       await axios.delete(
 
-        "http://localhost:5000/api/v1/notifications/clear-all",
+        "${import.meta.env.VITE_API_URL}/api/v1/notifications/clear-all",
 
         {
           withCredentials: true,

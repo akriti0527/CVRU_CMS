@@ -131,7 +131,7 @@ function AddItem() {
       const response =
       await axios.post(
 
-        "http://localhost:5000/api/v1/foods/",
+        "${import.meta.env.VITE_API_URL}/api/v1/foods/",
 
         formData,
 
