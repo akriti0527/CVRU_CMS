@@ -72,7 +72,7 @@ const orderSchema = new mongoose.Schema(
 
 enum: [
 
-  "Cash on Delivery",
+  "Cash",
 "UPI Payment",
 ],
       default: "COD"

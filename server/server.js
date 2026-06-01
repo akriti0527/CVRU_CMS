@@ -3,59 +3,113 @@ import { app } from "./app.js";
 import connectDB from "./database/dbConnection.js";
 import { createServer } from "http";
 import { Server } from "socket.io";
-import { getRedisAdapter } from "./utils/socket.utils.js"; // Uncomment when Redis is available
+//import { getRedisAdapter } from "./utils/socket.utils.js"; // Uncomment when Redis is available
 
 //Create HTTP server
 const server = createServer(app);
 
 // Initialize Socket.IO
-export const io = new Server(server, {
+// export const io = new Server(server, {
+//     cors: {
+//         origin: process.env.CORS_ORIGIN.split(","),
+//         credentials: true
+//     }
+// }); 
+
+
+// SOCKET.IO
+export const io =
+  new Server(server, {
+
     cors: {
-        origin: process.env.CORS_ORIGIN.split(","),
-        credentials: true
+
+      origin:
+        "http://localhost:5173",
+
+      methods:
+        ["GET", "POST"],
+
+      credentials: true
     }
-}); 
-io.on('connection', (socket) => {
-    console.log('User connected:', socket.id);
+  });
 
-    // Join user room for personal notifications
-    socket.on('join-user', (userId) => {
-        socket.join(`user_${userId}`);
-        console.log(`User ${userId} joined room user_${userId}`);
-    });
-     socket.on(
 
-      "join",
 
-      (userId) => {
+// SOCKET CONNECTION
+io.on(
 
-        socket.join(userId);
+  "connection",
+
+  (socket) => {
+
+    console.log(
+
+      "USER CONNECTED:",
+
+      socket.id
+    );
+
+
+
+
+
+    socket.on(
+
+      "disconnect",
+
+      () => {
 
         console.log(
-          "Joined Room:",
-          userId
+          "USER DISCONNECTED"
         );
       }
     );
+  }
+);
 
-    // Join post room for post-specific updates
-    socket.on('join-post', (postId) => {
-        socket.join(`post_${postId}`);
-        console.log(`User joined room post_${postId}`);
-    });
 
-    // Leave post room
-    socket.on('leave-post', (postId) => {
-        socket.leave(`post_${postId}`);
-        console.log(`User left room post_${postId}`);
-    });
 
-    socket.on('disconnect', () => {
-        console.log('User disconnected:', socket.id);
-    });
-});
-// Make io available globally
-global.io = io;
+// io.on('connection', (socket) => {
+//     console.log('User connected:', socket.id);
+
+//     // Join user room for personal notifications
+//     socket.on('join-user', (userId) => {
+//         socket.join(`user_${userId}`);
+//         console.log(`User ${userId} joined room user_${userId}`);
+//     });
+//      socket.on(
+
+//       "join",
+
+//       (userId) => {
+
+//         socket.join(userId);
+
+//         console.log(
+//           "Joined Room:",
+//           userId
+//         );
+//       }
+//     );
+
+//     // Join post room for post-specific updates
+//     socket.on('join-post', (postId) => {
+//         socket.join(`post_${postId}`);
+//         console.log(`User joined room post_${postId}`);
+//     });
+
+//     // Leave post room
+//     socket.on('leave-post', (postId) => {
+//         socket.leave(`post_${postId}`);
+//         console.log(`User left room post_${postId}`);
+//     });
+
+//     socket.on('disconnect', () => {
+//         console.log('User disconnected:', socket.id);
+//     });
+// });
+// // Make io available globally
+// global.io = io;
 
 // Connecting to Database and starting the server
 connectDB()
@@ -63,6 +117,7 @@ connectDB()
         server.listen(process.env.PORT || 5000, () => {
             console.log(`Server is running on port ${process.env.PORT}`)
         });
+        res.send("CVRU CMS is running..")
     })
     .catch((err) => {
         console.log("Connection Failed", err)

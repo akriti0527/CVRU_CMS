@@ -6,68 +6,6 @@ import {Order} from "../models/order.model.js";
 import Food from "../models/food.model.js";
 import Notification from "../models/notification.model.js";
 import { io } from "../server.js";
-//await order.save();
-// const order = await Order.findById(
-//     req.params.id
-// );
-
-// order.orderStatus = status;
-
-// await order.save();
-
-
-
-// // CREATE NOTIFICATION
-// const notification =
-// await Notification.create({
-
-//     user: order.user,
-
-//     title: "Order Update",
-
-//     message:
-//       `Your order ${order.tokenNumber} is now ${status}`,
-
-//     type: "order",
-
-//     order: order._id
-
-// });
-
-
-
-// // REALTIME EMIT
-// io.to(order.user.toString()).emit(
-//     "newNotification",
-//     notification
-// );/*
-// CREATE NOTIFICATION
-// const notification =
-//     await Notification.create({
-
-//         user: order.user,
-
-//         title: "Order Update",
-
-//         message:
-//             `Your order ${order.tokenNumber} is now ${status}`,
-
-//         type: "order",
-
-//         order: order._id
-
-//     });
-
-
-
-// // REALTIME EMIT
-// io.to(order.user.toString()).emit(
-//     "newNotification",
-//     {
-//         success: true,
-//         notification
-//     }
-// );*/
 
 //===================================
 //  GENERATE UNIQUE TOKEN
@@ -84,17 +22,145 @@ const generateOrderToken = () => {
 // ======================================
 // CREATE ORDER
 // ======================================
+// export const createOrder =
+// async (req, res) => {
+
+//   try {
+
+//     console.log(
+//       "BODY:",
+//       req.body
+//     );
+
+
+
+//     const {
+
+//       items,
+
+//       totalAmount,
+
+//       paymentMethod
+
+//     } = req.body;
+
+
+
+
+
+
+//     // VALIDATION
+//     if (
+
+//       !items ||
+
+//       items.length === 0
+//     ) {
+
+//       return res.status(400).json({
+
+//         success: false,
+
+//         message:
+//           "Cart is empty"
+//       });
+//     }
+
+
+
+
+
+
+//     // CREATE ORDER
+//     const order =
+//       await Order.create({
+
+//         user:
+//           req.user._id,
+
+//         items:
+
+//           items.map((item) => ({
+
+//             foodId:
+//               item.foodId,
+
+//             name:
+//               item.name,
+
+//             quantity:
+//               item.quantity,
+
+//             price:
+//               item.price
+//           })),
+
+//         totalAmount,
+
+//         paymentMethod:
+//           paymentMethod || "COD",
+
+//         orderStatus:
+//           "placed"
+//       });
+
+
+
+// io.emit(
+
+//   "newOrderPlaced",
+
+//   order
+// );
+// io.emit(
+//   "newOrderPlaced",
+//   {
+
+//     tokenNumber:
+//       order.tokenNumber,
+
+//     status:
+//       order.status,
+
+//     order
+//   }
+// );
+
+
+//     res.status(201).json({
+
+//       success: true,
+
+//       message:
+//         "Order placed successfully",
+
+//       order,
+//       token,
+// user
+//     });
+
+//   } catch (error) {
+
+//     console.log(
+//       "CREATE ORDER ERROR:",
+//       error
+//     );
+
+//     res.status(500).json({
+
+//       success: false,
+
+//       message:
+//         error.message
+//     });
+//   }
+// };
+
+
 export const createOrder =
 async (req, res) => {
 
   try {
-
-    console.log(
-      "BODY:",
-      req.body
-    );
-
-
 
     const {
 
@@ -102,7 +168,9 @@ async (req, res) => {
 
       totalAmount,
 
-      paymentMethod
+      paymentMethod,
+
+      deliveryPlace
 
     } = req.body;
 
@@ -110,77 +178,55 @@ async (req, res) => {
 
 
 
-
-    // VALIDATION
-    if (
-
-      !items ||
-
-      items.length === 0
-    ) {
-
-      return res.status(400).json({
-
-        success: false,
-
-        message:
-          "Cart is empty"
-      });
-    }
+    console.log(
+      "REQ USER:",
+      req.user
+    );
 
 
 
 
 
-
-    // CREATE ORDER
     const order =
       await Order.create({
 
         user:
           req.user._id,
 
-        items:
-
-          items.map((item) => ({
-
-            foodId:
-              item.foodId,
-
-            name:
-              item.name,
-
-            quantity:
-              item.quantity,
-
-            price:
-              item.price
-          })),
+        items,
 
         totalAmount,
 
-        paymentMethod:
-          paymentMethod || "COD",
+        paymentMethod,
 
-        orderStatus:
-          "placed"
+        deliveryPlace,
+
+        tokenNumber:
+          Math.floor(
+            1000 +
+            Math.random() * 9000
+          )
       });
 
 
 
+
+
+    console.log(
+      "ORDER CREATED:",
+      order
+    );
 io.emit(
-
   "newOrderPlaced",
-
   order
 );
 
-    res.status(201).json({
+
+
+
+    return res.status(201).json({
 
       success: true,
-
-      message:
-        "Order placed successfully",
 
       order
     });
@@ -192,7 +238,11 @@ io.emit(
       error
     );
 
-    res.status(500).json({
+
+
+
+
+    return res.status(500).json({
 
       success: false,
 
@@ -204,76 +254,64 @@ io.emit(
 // ======================================
 // GET MY ORDERS
 // ======================================
-export const getMyOrders = asyncHandler(
+export const getMyOrders =
+async (req, res) => {
 
-  async (req, res, next) => {
+  try {
 
-    try {
-
-      console.log("REQ USER:", req.user);
-
-
-
-      // CHECK LOGIN
-      if (!req.user) {
-
-        return next(
-
-          new ErrorHandler(
-            "Please login first",
-            401
-          )
-        );
-      }
+    console.log(
+      "USER ID:",
+      req.user._id
+    );
 
 
 
-      // FETCH ORDERS
-      const orders =
-        await Order.find({
-
-          user: req.user._id
-
-        })
-
-        .sort({
-
-          createdAt: -1
-        });
 
 
+    const orders =
+      await Order.find({
 
-      console.log(
-        "MY ORDERS:",
-        orders
-      );
-
-
-
-      return res.status(200).json({
-
-        success: true,
-
-        orders
+        user:
+          req.user._id
       });
 
-    } catch (error) {
 
-      console.log(
-        "GET MY ORDERS ERROR:",
-        error
-      );
 
-      return next(
 
-        new ErrorHandler(
-          error.message,
-          500
-        )
-      );
-    }
+
+    console.log(
+      "ORDERS:",
+      orders
+    );
+
+
+
+
+
+    res.status(200).json({
+
+      success: true,
+
+      orders
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+
+
+
+
+    res.status(500).json({
+
+      success: false,
+
+      message:
+        error.message
+    });
   }
-);
+};
 // ======================================
 // TRACK ORDER BY TOKEN
 // ======================================
@@ -518,7 +556,19 @@ io.emit(
       order.orderStatus
   }
 );
+io.emit(
+  "orderStatusUpdated",
+  {
 
+    tokenNumber:
+      order.tokenNumber,
+
+    status:
+      order.status,
+
+    order
+  }
+);
     // IMPORTANT
     // SEND UPDATED ORDER
 
