@@ -38,7 +38,7 @@ function Notifications() {
   useEffect(() => {
 
     const socket =
-      io("${import.meta.env.VITE_API_URL}", {
+      io(`${import.meta.env.VITE_API_URL}`, {
 
         withCredentials: true,
       });
@@ -93,7 +93,7 @@ function Notifications() {
       const response =
         await axios.get(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/notifications/my-notifications",
+          `${import.meta.env.VITE_API_URL}/api/v1/notifications/my-notifications`,
 
           {
             withCredentials: true,
@@ -213,7 +213,7 @@ function Notifications() {
 
       await axios.delete(
 
-        "${import.meta.env.VITE_API_URL}/api/v1/notifications/clear-all",
+        `${import.meta.env.VITE_API_URL}/api/v1/notifications/clear-all`,
 
         {
           withCredentials: true,

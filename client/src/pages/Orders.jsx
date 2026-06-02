@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import { useEffect, useState } from "react";
@@ -76,13 +77,16 @@ function Orders() {
   const fetchMyOrders = async () => {
 
     try {
-
+const token = localStorage.getItem("token");
       const response =
         await axios.get(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/orders/my-orders",
+          `${import.meta.env.VITE_API_URL}/api/v1/orders/my-orders`,
 
           {
+            headers: {
+      Authorization: `Bearer ${token}`,
+    },
             withCredentials: true
           }
         );
@@ -92,7 +96,7 @@ function Orders() {
       const orders =
         response.data.orders || [];
 
-
+console.log("MY ORDERS:", response.data.orders);
 
       console.log(
         "MY ORDERS:",

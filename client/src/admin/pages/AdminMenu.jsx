@@ -20,7 +20,7 @@ function AdminMenu() {
   /* ---------------- FETCH ALL FOODS ---------------- */
   const fetchFoods = async () => {
     try {
-      const res = await axios.get("${import.meta.env.VITE_API_URL}/api/v1/foods/");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/foods/`);
       if (res.data?.success) {
         setFoods(res.data.foods);
       }

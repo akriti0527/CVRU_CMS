@@ -61,7 +61,7 @@ function UserDashboard() {
       const response =
         await axios.get(
 
-          '${import.meta.env.VITE_API_URL}/api/v1/foods/'
+          `${import.meta.env.VITE_API_URL}/api/v1/foods/`
         );
 
 

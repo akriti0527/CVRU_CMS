@@ -149,7 +149,7 @@ function AdminSettings() {
 
         await axios.put(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/users/update-profile",
+          `${import.meta.env.VITE_API_URL}/api/v1/users/update-profile`,
 
           data,
 
@@ -218,7 +218,7 @@ function AdminSettings() {
 
         await axios.put(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/users/change-password",
+          `${import.meta.env.VITE_API_URL}/api/v1/users/change-password`,
 
           {
 

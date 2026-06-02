@@ -4,7 +4,7 @@ import axios from "axios";
 const API = axios.create({
 
   baseURL:
-    '${import.meta.env.VITE_API_URL}api/v1)',
+    `${import.meta.env.VITE_API_URL}api/v1)`,
 
   withCredentials: true
 });
@@ -43,7 +43,7 @@ API.interceptors.response.use(
         // GET NEW TOKEN
         await axios.post(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/users/refresh-token",
+          `${import.meta.env.VITE_API_URL}/api/v1/users/refresh-token`,
 
           {},
 

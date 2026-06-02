@@ -64,7 +64,7 @@ function UserSettings() {
         const response =
           await axios.get(
 
-            "${import.meta.env.VITE_API_URL}/api/v1/users/profile",
+            `${import.meta.env.VITE_API_URL}/api/v1/users/profile`,
 
             {
 
@@ -125,7 +125,7 @@ function UserSettings() {
         const response =
           await axios.put(
 
-            "${import.meta.env.VITE_API_URL}/api/v1/users/update-profile",
+            `${import.meta.env.VITE_API_URL}/api/v1/users/update-profile`,
 
             userData,
 

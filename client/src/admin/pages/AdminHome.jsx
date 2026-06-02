@@ -73,7 +73,7 @@ function AdminHome() {
         const orderRes =
           await axios.get(
 
-            "${import.meta.env.VITE_API_URL}/api/v1/orders/admin/active-orders",
+            `${import.meta.env.VITE_API_URL}/api/v1/orders/admin/active-orders`,
 
             {
               withCredentials: true
@@ -96,7 +96,7 @@ function AdminHome() {
         const foodRes =
           await axios.get(
 
-            "${import.meta.env.VITE_API_URL}/api/v1/foods/"
+            `${import.meta.env.VITE_API_URL}/api/v1/foods/`
           );
 
 

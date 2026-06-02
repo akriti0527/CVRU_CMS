@@ -32,15 +32,19 @@ function AdminOrders() {
   // =========================================
 
   const fetchOrders = async () => {
+const token = localStorage.getItem("token");
 
     try {
 
       const response =
         await axios.get(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/orders/admin/active-orders",
+          `${import.meta.env.VITE_API_URL}/api/v1/orders/admin/active-orders`,
 
           {
+             headers: {
+      Authorization: `Bearer ${token}`,
+    },
             withCredentials: true
           }
         );

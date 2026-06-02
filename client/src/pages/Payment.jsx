@@ -28,7 +28,11 @@ import {
 import axios from "axios";
 
 import "../css/Payment.css";
-import * as QRCode from "react-qr-code";
+
+// import * as QRCode from "react-qr-code";
+import { QRCode } from "react-qr-code";
+
+
 function Payment() {
  const location =
     useLocation();
@@ -39,7 +43,7 @@ const total =
     location.state?.total || 0;
  const cart =
     location.state?.cart || [];
-
+const token = localStorage.getItem("token");
 const upiId =
   "7004623735@ptyes";
   const upiURL =
@@ -156,7 +160,7 @@ const handleOrder =
       const response =
         await axios.post(
 
-          "${import.meta.env.VITE_API_URL}/api/v1/orders/create",
+          `${import.meta.env.VITE_API_URL}/api/v1/orders/create`,
 
           orderPayload,
 
@@ -165,7 +169,7 @@ const handleOrder =
             withCredentials: true,
 
             headers: {
-
+                  Authorization: `Bearer ${token}`,
               "Content-Type":
                 "application/json"
             }
@@ -219,7 +223,9 @@ const handleOrder =
 
       console.log(error);
 
-
+console.log("ORDER ERROR:", error.response?.data);
+  console.log("STATUS:", error.response?.status);
+  console.log("FULL ERROR:", error);
 
 
       alert(
@@ -234,8 +240,6 @@ const handleOrder =
       setLoading(false);
     }
   };
-
-
 
 
   return (

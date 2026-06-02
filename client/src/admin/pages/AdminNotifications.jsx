@@ -30,7 +30,7 @@ function AdminNotifications() {
         const response =
           await axios.get(
 
-            "${import.meta.env.VITE_API_URL}/api/v1/notifications/admin/admin",
+            `${import.meta.env.VITE_API_URL}/api/v1/notifications/admin/admin`,
 
             {
               withCredentials: true
