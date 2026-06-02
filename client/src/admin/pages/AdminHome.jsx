@@ -63,7 +63,7 @@ function AdminHome() {
 
   const fetchDashboardData =
     async () => {
-
+const token = localStorage.getItem("token");
       try {
 
         // =====================================
@@ -76,6 +76,9 @@ function AdminHome() {
             `${import.meta.env.VITE_API_URL}/api/v1/orders/admin/active-orders`,
 
             {
+              headers: {
+      Authorization: `Bearer ${token}`,
+    },
               withCredentials: true
             }
           );

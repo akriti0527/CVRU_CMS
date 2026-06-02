@@ -76,6 +76,7 @@ function AddItem() {
 
     e.preventDefault();
 
+const token = localStorage.getItem("token");
 
 
     try {
@@ -140,7 +141,7 @@ function AddItem() {
           withCredentials: true,
 
           headers: {
-
+             Authorization: `Bearer ${token}`,
             "Content-Type":
             "multipart/form-data"
           }

@@ -114,7 +114,7 @@ function AdminSettings() {
 
 
 
-
+const token = localStorage.getItem("token");
       try {
 
         const data =
@@ -154,7 +154,7 @@ function AdminSettings() {
           data,
 
           {
-
+            Authorization: `Bearer ${token}`,
             withCredentials: true,
 
             headers: {
@@ -212,7 +212,7 @@ function AdminSettings() {
       }
 
 
-
+const token = localStorage.getItem("token");
 
       try {
 
@@ -230,6 +230,9 @@ function AdminSettings() {
           },
 
           {
+            headers: {
+      Authorization: `Bearer ${token}`,
+    },
             withCredentials: true
           }
         );

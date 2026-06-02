@@ -145,7 +145,7 @@ const token = localStorage.getItem("token");
   newStatus
 
 ) => {
-
+const token = localStorage.getItem("token");
   try {
 
     // API CALL
@@ -159,7 +159,9 @@ const token = localStorage.getItem("token");
            orderStatus: newStatus        },
 
         {
-
+headers: {
+      Authorization: `Bearer ${token}`,
+    },
           withCredentials: true
         }
       );
@@ -261,7 +263,7 @@ const deleteOrder = async (
 
 
 
-
+const token = localStorage.getItem("token");
 
   try {
 
@@ -271,6 +273,9 @@ const deleteOrder = async (
       `${import.meta.env.VITE_API_URL}/api/v1/orders/admin/delete-order/${orderId}`,
 
       {
+        headers: {
+      Authorization: `Bearer ${token}`,
+    },
         withCredentials: true
       }
     );

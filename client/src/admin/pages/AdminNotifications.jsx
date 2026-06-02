@@ -24,7 +24,7 @@ function AdminNotifications() {
 
   const fetchNotifications =
     async () => {
-
+const token = localStorage.getItem("token");
       try {
 
         const response =
@@ -33,6 +33,9 @@ function AdminNotifications() {
             `${import.meta.env.VITE_API_URL}/api/v1/notifications/admin/admin`,
 
             {
+              headers: {
+      Authorization: `Bearer ${token}`,
+    },
               withCredentials: true
             }
           );

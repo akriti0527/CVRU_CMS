@@ -34,7 +34,7 @@ function AdminMenu() {
 
 const toggleAvailability =
   async (foodId) => {
-
+const token = localStorage.getItem("token");
     try {
 
       const response =
@@ -45,6 +45,9 @@ const toggleAvailability =
           {},
 
           {
+             headers: {
+      Authorization: `Bearer ${token}`,
+    },
             withCredentials: true
           }
         );
@@ -130,7 +133,7 @@ const deleteFood = async (
 
 
 
-
+const token = localStorage.getItem("token");
 
   try {
 
@@ -139,6 +142,9 @@ const deleteFood = async (
       `${import.meta.env.VITE_API_URL}/api/v1/foods/${foodId}`,
 
       {
+         headers: {
+      Authorization: `Bearer ${token}`,
+    },
         withCredentials: true
       }
     );

@@ -58,6 +58,7 @@ function UserSettings() {
 
   const fetchUser =
     async () => {
+const token = localStorage.getItem("token");
 
       try {
 
@@ -67,7 +68,9 @@ function UserSettings() {
             `${import.meta.env.VITE_API_URL}/api/v1/users/profile`,
 
             {
-
+              headers: {
+      Authorization: `Bearer ${token}`,
+    },
               withCredentials: true
             }
           );
@@ -114,6 +117,7 @@ function UserSettings() {
 
 
 
+const token = localStorage.getItem("token");
 
       try {
 
@@ -130,7 +134,9 @@ function UserSettings() {
             userData,
 
             {
-
+              headers: {
+      Authorization: `Bearer ${token}`,
+    },
               withCredentials: true
             }
           );

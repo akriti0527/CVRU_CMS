@@ -206,6 +206,7 @@ function AdminStocks() {
 
       currentStatus
     ) => {
+const token = localStorage.getItem("token");
 
       try {
 
@@ -220,6 +221,9 @@ function AdminStocks() {
           },
 
           {
+            headers: {
+      Authorization: `Bearer ${token}`,
+    },
             withCredentials: true
           }
         );
