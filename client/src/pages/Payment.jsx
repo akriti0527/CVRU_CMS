@@ -43,7 +43,7 @@ const total =
     location.state?.total || 0;
  const cart =
     location.state?.cart || [];
-const token = localStorage.getItem("token");
+
 const upiId =
   "7004623735@ptyes";
   const upiURL =
@@ -110,7 +110,7 @@ const handleOrder =
   async () => {
 
     try {
-
+const token = localStorage.getItem("token");
       setLoading(true);
 
 
@@ -158,6 +158,7 @@ const handleOrder =
 
       // API
       const response =
+      
         await axios.post(
 
           `${import.meta.env.VITE_API_URL}/api/v1/orders/create`,
